@@ -3,10 +3,9 @@
     src: url("fonts/Roboto-thin.ttf");
 }
 
-
 :root {
     font-size: 16px;
-    font-family: 'Open Sans';
+    font-family: roboto;
     --text-primary: #b6b6b6;
     --text-secondary: #ececec;
     --bg-primary: #23232e;
@@ -15,9 +14,8 @@
 }
 
 body {
-    font-family: roboto;
-    color: black;
-    background-color: white;
+    color: var(--text-secondary);
+    background-color: var(--bg-secondary);
     margin: 0;
     padding: 0;
 }
@@ -42,8 +40,6 @@ main {
 .navbar {
     position: fixed;
     background-color: var(--bg-primary);
-    width: 5rem;
-    height: 100vh;
     transition: width 600ms ease;
 }
 
@@ -64,11 +60,6 @@ main {
 .nav-item:last-child {
     margin-top: auto;
 }
-
-.navbar:hover {
-    width: 16rem;
-}
-
 
 .nav-link {
     display: flex;
@@ -110,7 +101,6 @@ main {
     transition: var(--transition-speed);
 }
 
-
 .logo {
     font-weight: bold;
     text-transform: uppercase;
@@ -119,7 +109,6 @@ main {
     color: var(--text-secondary);
     background: var(--bg-secondary);
     font-size: 1.5rem;
-    text-transform: uppercase;
     letter-spacing: 0.3ch;
     width: 100%;
 }
@@ -129,7 +118,8 @@ main {
     transition: var(--transition-speed);
 }
 
-.logo-text {
+.logo-text
+{
     display: inline;
     position: absolute;
     left: -999px;
@@ -140,6 +130,7 @@ main {
     transform: rotate(-180deg);
 }
 
+/* Small screens */
 @media only screen and (max-width: 600px) {
     .navbar {
         bottom: 0;
@@ -172,59 +163,71 @@ main {
         height: 100vh;
     }
 
+    .navbar:hover {
+        width: 16rem;
+    }
 
     .navbar:hover .link-text {
         display: inline;
     }
 
-    .navbar:hover .logo svg {
+    .navbar:hover .logo svg
+    {
         margin-left: 11rem;
     }
 
-    .navbar:hover .logo-text {
+    .navbar:hover .logo-text
+    {
         left: 0px;
     }
 }
 
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --text-color: #b6b6b6;
-        --background: #ececec;
-    }
-}
-
-@media (prefers-color-scheme: light) {
-    :root {
-        --text-color: #1f1f1f;
-        --background: #000000;
-    }
-}
-
-body {
-    color: var(--text-color);
-    background: var(--background);
-}
-
-
 .dark {
-
-    --text-color: #b6b6b6;
-    --background: #000000;
+    --text-primary: #b6b6b6;
+    --text-secondary: #ececec;
+    --bg-primary: #23232e;
+    --bg-secondary: #141418;
 }
 
 .light {
-    --text-color: #1f1f1f;
-    --background: #ececec;
+    --text-primary: #1f1f1f;
+    --text-secondary: #000000;
+    --bg-primary: #ffffff;
+    --bg-secondary: #e4e4e4;
 }
-
 
 .solar {
-    --text-color: #576e75;
-    --background: #fdf6e3;
+    --text-primary: #576e75;
+    --text-secondary: #35535c;
+    --bg-primary: #fdf6e3;
+    --bg-secondary: #f5e5b8;
 }
 
-body {
-    color: var(--text-color);
-    background: var(--background);
+.theme-icon {
+    display: none;
+}
+
+.dark #darkIcon {
+    display: block;
+}
+
+.light #lightIcon {
+    display: block;
+}
+
+.solar #solarIcon {
+    display: block;
+}
+
+.newest
+{
+    border: var(--text-secondary);
+    border-top:    1px solid;
+    border-right:  0px;
+    border-bottom: 0px;
+    border-left:   0px;
+
+    width: fit-content;
+
+    max-width: 500px;
 }
