@@ -219,16 +219,4 @@ main {
     display: block;
 }
 
-.newest
-{
-    border: var(--text-secondary);
-    border-top:    1px solid;
-    border-right:  0px;
-    border-bottom: 0px;
-    border-left:   0px;
-
-    width: fit-content;
-
-    max-width: 500px;
-}
 

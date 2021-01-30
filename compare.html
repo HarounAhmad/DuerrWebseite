@@ -14,7 +14,9 @@
     <link rel="stylesheet" href="main.css">
 
     <script src="https://kit.fontawesome.com/c859b4c663.js" crossorigin="anonymous"></script>
-
+    <script src="jquery-csv.js"></script>
+    <script src="//d3js.org/d3.v3.min.js"></script>
+    <link rel="stylesheet" href="compare.css">
 </head>
 <body class="dark" id="body" onload="checkMode()">
 <nav class="navbar">
@@ -192,15 +194,15 @@
 </nav>
 
 
-<main>
-    <button id="btn1">Show Text</button>
-    <p id="data"></p>
-
-    <label>select</label>
-    <select id="gpus" name ="gpus">
-    <option>yes</option>
-    </select>
-
+<main id="main">
+    <iframe id="gpu1"
+            title="gpu1"
+            width="55%"
+            height="1000px"
+            src="https://gpu.userbenchmark.com/Nvidia-RTX-2080-Ti/Rating/4027"
+            style="-webkit-overflow-scrolling: auto"
+    >
+    </iframe>
 </main>
 </body>
 </html>

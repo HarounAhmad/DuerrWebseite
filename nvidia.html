@@ -12,9 +12,10 @@
     <link rel="stylesheet" href="main.css">
 
     <script src="https://kit.fontawesome.com/c859b4c663.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="nvidia.css">
 
 </head>
-<body class="dark" id="body" onload="checkMode()">
+<body class="dark" id="body">
 <nav class="navbar">
     <ul class="navbar-nav">
         <li class="logo">
@@ -188,5 +189,42 @@
 
     </ul>
 </nav>
+
+<main>
+
+    <div class="HeadingVideo" id="HeadingVideoDark">
+    <video autoplay muted loop id="rtxDark">
+        <source src="Media\Videos\rtxvideoBlack.mp4" type="video/mp4" id="rtxVideoDark">
+
+    </video>
+    </div>
+    <div class="HeadingVideo" id="HeadingVideoLight">
+        <video autoplay muted loop id="rtxWhite">
+          <source src="Media\Videos\rtxVideoWhite.mp4" type="video/mp4" id="rtxVideoLight">
+
+        </video>
+
+    </div>
+    <div class="responsive">
+        <div class="gallery">
+
+
+            <img src="Media/Images/Bilder/NVidia/RTX30/rtx3090.png" width="600" id="rtx3090"/>
+            <h3>NVidia RTX 3090</h3>
+            <br>
+            <div class="desc"><p>Im Gegensatz zur RTX 3080 basiert die RTX 3090 auf der vollen Version des GA102-Chips.
+                Nebst den 21 Prozent mehr CUDA-Kernen und 21 Prozent mehr Textur-Mapping-Einheiten bietet die Karte 17
+                Prozent mehr Render-Ausgabeeinheiten oder ROPs. Bei den Taktgeschwindigkeiten sind beide ähnlich. Die
+                3090 hat aber den etwas schnelleren GDDR6X-Speicher mit 19,5 Gbps. In Verbindung mit dem
+                384-bit-Speicherbus ergibt das eine Speicherbandbreite von 935,8 GB/s. Eine Steigerung von 23 Prozent
+                gegenüber der 3080.<br><br></br>
+            </p></div>
+        </div>
+    </div>
+
+
+</main>
+
 </body>
+
 </html>

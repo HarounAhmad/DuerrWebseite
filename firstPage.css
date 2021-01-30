@@ -1,0 +1,67 @@
+
+
+
+@media only screen and (min-width: 600px) {
+    .newest
+    {
+        border: var(--text-secondary);
+        border-top:    1px solid;
+        border-right:  0px;
+        border-bottom: 0px;
+        border-left:   0px;
+
+        width: fit-content;
+
+        max-width: 1000px;
+    }
+
+    div.gallery {
+        float: left;
+        width: 500px;
+    }
+
+
+    div.gallery img {
+        width: 100%;
+        height: auto;
+    }
+
+
+}
+
+@media only screen and (max-width: 600px) {
+    .newest
+    {
+        border: var(--text-secondary);
+        border-top:    1px solid;
+        border-right:  0px;
+        border-bottom: 0px;
+        border-left:   0px;
+
+        width: fit-content;
+
+        max-width: 500px;
+    }
+
+    div.gallery {
+        float: left;
+        width: 500px;
+
+    }
+
+
+
+    div.gallery img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+#rtx3090 {
+    padding-bottom: 50px;
+}
+
+.desc{
+    padding-bottom: 50px;
+}
+

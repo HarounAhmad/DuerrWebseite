@@ -12,9 +12,9 @@ function processData(allText) {
     var headers = allTextLines[0].split(',');
     var lines = [];
     var txt;
-    var dropdown = document.getElementById("gpus");
-    var option = document.createElement("option");
-
+    var txtString;
+    var url;
+    var counter;
     for (var i=1; i<allTextLines.length; i++) {
         var data = allTextLines[i].split(',');
         if (data.length == headers.length) {
@@ -27,13 +27,23 @@ function processData(allText) {
         }
     }
     for (var x = 0; x < lines.length; x++) {
-        txt += lines[x] + "\n"
-        option.text = txt
-        dropdown.add(option)
+        txt += lines[x] + "\n";
+        counter += 1;
+        txtString = lines[x].toString();
+        url = txtString.match("https[\\s\\S]*$");
+        getURL(url);
 
     }
 
 
+   // console.log(txt.toString());
+}
 
-    console.log(lines);
+function getURL(url, count)
+{
+    var node = document.createElement("LI");
+    var textNode = document.createTextNode(url[0]);
+    node.appendChild(textNode);
+    document.getElementById("myList").appendChild(node);
+
 }
