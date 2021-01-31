@@ -130,7 +130,6 @@ main {
     transform: rotate(-180deg);
 }
 
-/* Small screens */
 @media only screen and (max-width: 600px) {
     .navbar {
         bottom: 0;
@@ -155,7 +154,6 @@ main {
     }
 }
 
-/* Large screens */
 @media only screen and (min-width: 600px) {
     .navbar {
         top: 0;
@@ -196,12 +194,7 @@ main {
     --bg-secondary: #e4e4e4;
 }
 
-.solar {
-    --text-primary: #576e75;
-    --text-secondary: #35535c;
-    --bg-primary: #fdf6e3;
-    --bg-secondary: #f5e5b8;
-}
+
 
 .theme-icon {
     display: none;

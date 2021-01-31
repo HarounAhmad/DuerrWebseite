@@ -1,7 +1,8 @@
-
 /*
 ** toggles between light and darkmode
  */
+console.log(localStorage.getItem("isDark"));
+
 function ToggleTheme() {
     var bodyClass = document.getElementById("body");
     var DarkIcon = document.getElementById("darkIcon");
@@ -42,8 +43,8 @@ window.addEventListener("load", function checkMode() {
     var RTXVideoDark = document.getElementById("rtxVideoDark");
     var RTXVideoLight = document.getElementById("rtxVideoLight");
 
-    if(localStorage.getItem('isDark') == 'true')
-    {
+    if (localStorage.getItem('isDark') == 'true') {
+
         bodyClass.classList.remove("light");
         bodyClass.classList.add("dark");
         DarkIcon.setAttribute("display", "none")
@@ -51,8 +52,8 @@ window.addEventListener("load", function checkMode() {
         RTXVideoDark.style.display = "inline";
         RTXVideoLight.style.display = "none";
         console.log("yess")
-    }else if(localStorage.getItem('isLight') == 'true')
-    {
+    } else if (localStorage.getItem('isLight') == 'true') {
+
         bodyClass.classList.remove("dark");
         bodyClass.classList.add("light");
         DarkIcon.setAttribute("display", "inline")
@@ -61,4 +62,53 @@ window.addEventListener("load", function checkMode() {
         RTXVideoLight.style.display = "inline";
     }
 
+
 })
+
+filterSelection("all") // Execute the function and show all columns
+function filterSelection(c) {
+    var x, i;
+    x = document.getElementsByClassName("column");
+    if (c == "all") c = "";
+    // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+    for (i = 0; i < x.length; i++) {
+        RemoveClass(x[i], "show");
+        if (x[i].className.indexOf(c) > -1) AddClass(x[i], "show");
+    }
+}
+
+// Show filtered elements
+function AddClass(element, name) {
+    var i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+        if (arr1.indexOf(arr2[i]) == -1) {
+            element.className += " " + arr2[i];
+        }
+    }
+}
+
+// Hide elements that are not selected
+function RemoveClass(element, name) {
+    var i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+        while (arr1.indexOf(arr2[i]) > -1) {
+            arr1.splice(arr1.indexOf(arr2[i]), 1);
+        }
+    }
+    element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("btns");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function(){
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+    });
+}

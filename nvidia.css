@@ -1,3 +1,5 @@
+
+
 @media only screen and (min-width: 600px) {
     .newest {
         border: var(--text-secondary);
@@ -83,8 +85,9 @@
     }
 }
 
-#rtx3090 {
+img {
     padding-bottom: 50px;
+
 }
 
 .desc {
@@ -102,4 +105,76 @@ video {
     z-index: -1000;
     pointer-events: none;
 
+}
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+.main {
+    max-width: 1000px;
+    margin: auto;
+}
+
+h1 {
+    font-size: 50px;
+    word-break: break-all;
+}
+
+.row {
+    margin: 8px -16px;
+}
+
+.row,
+.row > .column {
+    padding: 8px;
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+    display: none;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.content {
+    background-color: var(--bg-secondary);
+    padding: 10px;
+}
+
+.show {
+    display: block;
+}
+
+.btn {
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    background-color: var(--bg-primary);
+    cursor: pointer;
+    color: var(--text-primary);
+}
+
+.btn:hover {
+    filter: grayscale(0%) opacity(1);
+
+    background-color: var(--bg-secondary);
+}
+
+.btn.active {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+.btn.active:hover {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
 }

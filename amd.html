@@ -12,11 +12,11 @@
     <script src="main.js"></script>
 
     <link rel="stylesheet" href="main.css">
-
+    <link rel="stylesheet" href="amd.css">
     <script src="https://kit.fontawesome.com/c859b4c663.js" crossorigin="anonymous"></script>
 
 </head>
-<body class="dark" id="body" onload="checkMode()">
+<body class="dark" id="body">
 <nav class="navbar">
     <ul class="navbar-nav">
         <li class="logo">
@@ -190,5 +190,103 @@
 
     </ul>
 </nav>
+
+<main>
+
+    <div class="heading">
+        <img src="Media/Images/Bilder/AMD/WebsiteBackground.png"/>
+    </div>
+    <div id="btns">
+        <button class="btn active" onclick="filterSelection('all')"> Alle anzeigen</button>
+        <button class="btn" onclick="filterSelection('rx6000')"> RX 6000 Serie</button>
+        <button class="btn" onclick="filterSelection('rx5000')"> RX 5000 Serie</button>
+        <button class="btn" onclick="filterSelection('rx500')"> RX 500 Serie</button>
+        <button class="btn" onclick="filterSelection('rxvega')"> RX Vega</button>
+
+    </div>
+
+    <div class="row">
+        <div class="column rx6000">
+            <div class="content">
+                <img src="Media/Images/Bilder/AMD/rx6000/579976-radeon-6900xt-6800xt-1260x709.png" alt="6900" style="width:100%">
+                <h4>RX 6900</h4>
+                <p>
+                <ul>
+                <li>GPU: Navi 21</li>
+                <li>Lithography: TSMC 7nm</li>
+                <li>Die size: 519 mm2</li>
+                <li>Transistors: 26.8bn</li>
+                <li>Stream processors: 5,120</li>
+                <li>CUs: 80</li>
+                <li>Ray Accelerators: 80</li>
+                <li>GPU Game clock: 2,015MHz</li>
+                <li>GPU Boost clock: 2,250MHz</li>
+                <li>Memory bus: 256-bit</li>
+                <li>Memory capacity: 16GB GDDR6</li>
+                <li>Memory speed: 16Gbps</li>
+                <li>Memory bandwidth: 512GB/s</li>
+                <li>TGP: 300W</li>
+                <li>Recommended power supply: 750W</li>
+                <li>Size: 2.5-slot</li>
+                </ul>
+                </p>
+            </div>
+
+        </div>
+        <div class="column rx6000">
+            <div class="content">
+                <img src="Media/Images/Bilder/AMD/rx6000/579976-radeon-6900xt-6800xt-1260x709.png" alt="6800" style="width:100%">
+                <h4>RX 6800</h4>
+                <p>
+                <ul>
+                    <li>GPU: Navi 21</li>
+                    <li>Lithography: TSMC 7nm</li>
+                    <li>Die size: 519 mm2</li>
+                    <li>Transistors: 26.8bn</li>
+                    <li>Stream processors: 5,120</li>
+                    <li>CUs: 60</li>
+                    <li>Ray Accelerators: 80</li>
+                    <li>GPU Game clock: 1,815MHz</li>
+                    <li>GPU Boost clock: 2,105MHz</li>
+                    <li>Memory bus: 256-bit</li>
+                    <li>Memory capacity: 16GB GDDR6</li>
+                    <li>Memory speed: 16Gbps</li>
+                    <li>Memory bandwidth: 512GB/s</li>
+                    <li>TGP: 300W</li>
+                    <li>Recommended power supply: 750W</li>
+                    <li>Size: 2.5-slot</li>
+                </ul>
+                </p>
+            </div>
+        </div>
+        <div class="column rx6000">
+            <div class="content">
+                <img src="Media/Images/Bilder/AMD/rx6000/579976-radeon-6900xt-6800xt-1260x709.png" alt="6800" style="width:100%">
+                <h4>RX 6800</h4>
+                <p>
+                <ul>
+                    <li>GPU: Navi 21</li>
+                    <li>Lithography: TSMC 7nm</li>
+                    <li>Die size: 519 mm2</li>
+                    <li>Transistors: 26.8bn</li>
+                    <li>Stream processors: 5,120</li>
+                    <li>CUs: 80</li>
+                    <li>Ray Accelerators: 80</li>
+                    <li>GPU Game clock: 1489 MHz</li>
+                    <li>GPU Boost clock: 2,250MHz</li>
+                    <li>Memory bus: 256-bit</li>
+                    <li>Memory capacity: 12GB GDDR6</li>
+                    <li>Memory speed: 16Gbps</li>
+                    <li>Memory bandwidth: 512GB/s</li>
+                    <li>TGP: 200w</li>
+                    <li>Recommended power supply: 550W</li>
+                    <li>Size: 2.5-slot</li>
+                </ul>
+                </p>
+            </div>
+        </div>
+    </div>
+
+</main>
 </body>
 </html>

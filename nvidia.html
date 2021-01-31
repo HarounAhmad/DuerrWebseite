@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
 
     <meta charset="UTF-8">
     <meta name="Grafikkarten"
           content="Grafikkarten, Grafik, karten, gpu, GPU, Hardware, nvidia, amd, Geforce, RTX, RX"/>
     <title>Grafikkarten</title>
-    <script src="main.js"></script>
 
     <link rel="stylesheet" href="main.css">
+    <script src="main.js"></script>
 
     <script src="https://kit.fontawesome.com/c859b4c663.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="nvidia.css">
@@ -169,7 +171,8 @@
                     <g class="fa-group">
 
                         <path fill="#ff7eee" id="darkIcon" display="inline"
-                              d="M 256 160 c -52.9 0 -96 43.1 -96 96 s 43.1 96 96 96 s 96 -43.1 96 -96 s -43.1 -96 -96 -96 Z m 246.4 80.5 l -94.7 -47.3 l 33.5 -100.4 c 4.5 -13.6 -8.4 -26.5 -21.9 -21.9 l -100.4 33.5 l -47.4 -94.8 c -6.4 -12.8 -24.6 -12.8 -31 0 l -47.3 94.7 L 92.7 70.8 c -13.6 -4.5 -26.5 8.4 -21.9 21.9 l 33.5 100.4 l -94.7 47.4 c -12.8 6.4 -12.8 24.6 0 31 l 94.7 47.3 l -33.5 100.5 c -4.5 13.6 8.4 26.5 21.9 21.9 l 100.4 -33.5 l 47.3 94.7 c 6.4 12.8 24.6 12.8 31 0 l 47.3 -94.7 l 100.4 33.5 c 13.6 4.5 26.5 -8.4 21.9 -21.9 l -33.5 -100.4 l 94.7 -47.3 c 13 -6.5 13 -24.7 0.2 -31.1 Z m -155.9 106 c -49.9 49.9 -131.1 49.9 -181 0 c -49.9 -49.9 -49.9 -131.1 0 -181 c 49.9 -49.9 131.1 -49.9 181 0 c 49.9 49.9 49.9 131.1 0 181 Z");
+                              d="M 256 160 c -52.9 0 -96 43.1 -96 96 s 43.1 96 96 96 s 96 -43.1 96 -96 s -43.1 -96 -96 -96 Z m 246.4 80.5 l -94.7 -47.3 l 33.5 -100.4 c 4.5 -13.6 -8.4 -26.5 -21.9 -21.9 l -100.4 33.5 l -47.4 -94.8 c -6.4 -12.8 -24.6 -12.8 -31 0 l -47.3 94.7 L 92.7 70.8 c -13.6 -4.5 -26.5 8.4 -21.9 21.9 l 33.5 100.4 l -94.7 47.4 c -12.8 6.4 -12.8 24.6 0 31 l 94.7 47.3 l -33.5 100.5 c -4.5 13.6 8.4 26.5 21.9 21.9 l 100.4 -33.5 l 47.3 94.7 c 6.4 12.8 24.6 12.8 31 0 l 47.3 -94.7 l 100.4 33.5 c 13.6 4.5 26.5 -8.4 21.9 -21.9 l -33.5 -100.4 l 94.7 -47.3 c 13 -6.5 13 -24.7 0.2 -31.1 Z m -155.9 106 c -49.9 49.9 -131.1 49.9 -181 0 c -49.9 -49.9 -49.9 -131.1 0 -181 c 49.9 -49.9 131.1 -49.9 181 0 c 49.9 49.9 49.9 131.1 0 181 Z"
+                              );
 
                         />
                         <path
@@ -193,35 +196,410 @@
 <main>
 
     <div class="HeadingVideo" id="HeadingVideoDark">
-    <video autoplay muted loop id="rtxDark">
-        <source src="Media\Videos\rtxvideoBlack.mp4" type="video/mp4" id="rtxVideoDark">
+        <video autoplay muted loop id="rtxDark">
+            <source src="Media\Videos\rtxvideoBlack.mp4" type="video/mp4" id="rtxVideoDark">
 
-    </video>
+        </video>
     </div>
     <div class="HeadingVideo" id="HeadingVideoLight">
         <video autoplay muted loop id="rtxWhite">
-          <source src="Media\Videos\rtxVideoWhite.mp4" type="video/mp4" id="rtxVideoLight">
+            <source src="Media\Videos\rtxVideoWhite.mp4" type="video/mp4" id="rtxVideoLight">
 
         </video>
 
     </div>
-    <div class="responsive">
-        <div class="gallery">
 
+    <div id="btns">
+        <button class="btn active" onclick="filterSelection('all')"> Alle anzeigen</button>
+        <button class="btn" onclick="filterSelection('RTX30')"> RTX 30Serie</button>
+        <button class="btn" onclick="filterSelection('RTX20')"> RTX 20Serie</button>
+        <button class="btn" onclick="filterSelection('GTX10')"> GTX 10Serie</button>
+        <button class="btn" onclick="filterSelection('Quadro')"> Quadro</button>
 
-            <img src="Media/Images/Bilder/NVidia/RTX30/rtx3090.png" width="600" id="rtx3090"/>
-            <h3>NVidia RTX 3090</h3>
-            <br>
-            <div class="desc"><p>Im Gegensatz zur RTX 3080 basiert die RTX 3090 auf der vollen Version des GA102-Chips.
-                Nebst den 21 Prozent mehr CUDA-Kernen und 21 Prozent mehr Textur-Mapping-Einheiten bietet die Karte 17
-                Prozent mehr Render-Ausgabeeinheiten oder ROPs. Bei den Taktgeschwindigkeiten sind beide ähnlich. Die
-                3090 hat aber den etwas schnelleren GDDR6X-Speicher mit 19,5 Gbps. In Verbindung mit dem
-                384-bit-Speicherbus ergibt das eine Speicherbandbreite von 935,8 GB/s. Eine Steigerung von 23 Prozent
-                gegenüber der 3080.<br><br></br>
-            </p></div>
-        </div>
     </div>
 
+    <div class="row">
+        <div class="column RTX30">
+            <div class="content">
+                <img src="Media/Images/Bilder/NVidia/RTX30/rtx3090.png" alt="RTX3090" style="width:100%">
+                <h4>RTX 3090</h4>
+                <p>
+                <ul>
+                    <li>CUDA cores: 10,496</li>
+                    <li>Boost clock: 1.7GHz</li>
+                    <li>Memory: 24GB GDDR6X</li>
+                    <li>Memory bus: 384-bit</li>
+                    <li>Memory bandwidth: 936 GBps</li>
+                    <li>RT cores: 82 (2nd-gen)</li>
+                    <li>Tensor cores: 328 (3rd-gen)</li>
+                    <li>NVLink SLI: Yes</li>
+                    <li>PCIe: Gen 4</li>
+                    <li>HDMI: 2.1</li>
+                    <li>HDCP: 2.3</li>
+                    <li>Display connectors: 1x HDMI 2.1, 3x DisplayPort 1.4</li>
+                    <li>Length: 31.2 cm</li>
+                    <li>Width: 13.7 cm</li>
+                    <li>Height: 3-slot</li>
+                    <li>Maximum GPU temp: 93</li>
+                    <li>Graphics card power: 350W</li>
+                    <li>Recommended power supply: 750W</li>
+                    <li>Power connectors: 2x 8-pin (with supplied 12-pin adapter)</li>
+                </ul>
+                </p>
+            </div>
+
+        </div>
+        <div class="column RTX30">
+            <div class="content">
+                <img src="Media/Images/Bilder/NVidia/RTX30/rtx3080.png" alt="rtx3080" style="width:100%">
+                <h4>RTX 3080</h4>
+                <p>
+                <ul>
+                    <li> CUDA cores: 8,704</li>
+                    <li> Boost clock: 1.71GHz</li>
+                    <li> Memory: 10GB GDDR6X at 9500MHz</li>
+                    <li> Memory bus: 320-bit</li>
+                    <li> Memory bandwidth: 760GB/s</li>
+                    <li> RT cores: 68 (2nd-gen)</li>
+                    <li> Tensor cores: 384 (3rd-gen)</li>
+                    <li> NVLink SLI: No</li>
+                    <li> PCIe: Gen 4</li>
+                    <li> HDMI: 2.1</li>
+                    <li> HDCP: 2.3</li>
+                    <li> Display connectors: 1x HDMI 2.1, 3x DisplayPort 1.4</li>
+                    <li> Length: 28.4 cm</li>
+                    <li> Width: 11.2 cm</li>
+                    <li> Height: 2-slot</li>
+                    <li> Maximum GPU temp: 93</li>
+                    <li> Graphics card power: 320W</li>
+                    <li> Recommended power supply: 750W</li>
+                    <li> Power connectors: 2x 8-pin (with supplied 12-pin adapter)</li>
+                </ul>
+                </p>
+            </div>
+        </div>
+        <div class="column RTX30">
+            <div class="content">
+                <img src="Media/Images/Bilder/NVidia/RTX30/rtx3070.png" alt="rtx3070" style="width:100%">
+                <h4>RTX 3070</h4>
+                <p>
+                <ul>
+                    <li> CUDA cores: 5,888</li>
+                    <li> Boost clock: 1.73GHz</li>
+                    <li> Memory: 8GB GDDR6X at 9500MHz</li>
+                    <li> Memory bus: 256-bit</li>
+                    <li> Memory bandwidth: 760GB/s</li>
+                    <li> RT cores: 68 (2nd-gen)</li>
+                    <li> Tensor cores: 384 (3rd-gen)</li>
+                    <li> NVLink SLI: No</li>
+                    <li> PCIe: Gen 4</li>
+                    <li> HDMI: 2.1</li>
+                    <li> HDCP: 2.3</li>
+                    <li> Display connectors: 1x HDMI 2.1, 3x DisplayPort 1.4</li>
+                    <li> Length: 24.1 cm</li>
+                    <li> Width: 11.2 cm</li>
+                    <li> Height: 2-slot</li>
+                    <li> Maximum GPU temp: 93</li>
+                    <li> Graphics card power: 220W</li>
+                    <li> Recommended power supply: 650W</li>
+                    <li> Power connectors: 1x 8-pin</li>
+                </ul>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="column RTX30">
+            <div class="content">
+                <img src="Media/Images/Bilder/NVidia/RTX30/rtx3060.png" alt="rtx3060" style="width:100%">
+                <h4>RTX 3060</h4>
+                <p>
+                <ul>
+                    <li> CUDA cores: 3,584</li>
+                    <li> Boost clock: 1.73GHz</li>
+                    <li> Memory: 12GB GDDR6X at 9500MHz</li>
+                    <li> Memory bus: 192-bit</li>
+                    <li> Memory bandwidth: 760GB/s</li>
+                    <li> RT cores: 68 (2nd-gen)</li>
+                    <li> Tensor cores: 384 (3rd-gen)</li>
+                    <li> NVLink SLI: No</li>
+                    <li> PCIe: Gen 4</li>
+                    <li> HDMI: 2.1</li>
+                    <li> HDCP: 2.3</li>
+                    <li> Display connectors: 1x HDMI 2.1, 3x DisplayPort 1.4</li>
+                    <li> Length: 24.1 cm</li>
+                    <li> Width: 11.2 cm</li>
+                    <li> Height: 2-slot</li>
+                    <li> Maximum GPU temp: 93</li>
+                    <li> Graphics card power: 170W</li>
+                    <li> Recommended power supply: 450W</li>
+                    <li> Power connectors: 1x 12-pin</li>
+                </ul>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="column RTX20">
+            <div class="content">
+                <img src="Media/Images/Bilder/NVidia/RTX20/rtx2080ti.png" alt="2080ti" style="width:100%">
+                <h4>RTX 2080ti</h4>
+                <p>
+                <ul>
+                    <li>CUDA cores: 4,352</li>
+                    <li>Clock speed: 1,350MHz base, 1,545MHz boost (OC Founders Edition 1,635MHz boost)</li>
+                    <li>RT cores: 72</li>
+                    <li>Tensor cores: 576</li>
+                    <li>Texture units: 288</li>
+                    <li>ROP units: 96</li>
+                    <li>Memory capacity: 11GB GDDR6</li>
+                    <li>Memory path: 352 bits</li>
+                    <li>Memory bandwidth: 616GBps</li>
+                    <li>Ports: VirtualLink/USB-C, DisplayPort 1.4, HDMI 2.0b</li>
+                    <li>Power: 2 x 8-pin, 250W TDP stock, 265W TDP OC Founders Edition</li>
+                </ul>
+                </p>
+            </div>
+        </div>
+        <div class="column RTX20">
+            <div class="content">
+                <img src="Media/Images/Bilder/NVidia/RTX20/rtx2080s.png" alt="rtx2080s" style="width:100%">
+                <h4>RTX 2080 Super</h4>
+                <p>
+                <ul>
+                    <li>CUDA cores: 4,352</li>
+                    <li>Clock speed: 1,350MHz base, 1,545MHz boost (OC Founders Edition 1,635MHz boost)</li>
+                    <li>RT cores: 72</li>
+                    <li>Tensor cores: 576</li>
+                    <li>Texture units: 288</li>
+                    <li>ROP units: 96</li>
+                    <li>Memory capacity: 11GB GDDR6</li>
+                    <li>Memory path: 352 bits</li>
+                    <li>Memory bandwidth: 616GBps</li>
+                    <li>Ports: VirtualLink/USB-C, DisplayPort 1.4, HDMI 2.0b</li>
+                    <li>Power: 2 x 8-pin, 250W TDP stock, 265W TDP OC Founders Edition</li>
+                </ul>
+                </p>
+            </div>
+        </div>
+        <div class="column RTX20">
+            <div class="content">
+                <img src="Media/Images/Bilder/NVidia/RTX20/rtx2070s.png" alt="rtx2070s" style="width:100%">
+                <h4>RTX 2070 Super</h4>
+                <p>
+                <ul>
+                    <li>CUDA cores: 4,352</li>
+                    <li>Clock speed: 1,350MHz base, 1,545MHz boost (OC Founders Edition 1,635MHz boost)</li>
+                    <li>RT cores: 72</li>
+                    <li>Tensor cores: 576</li>
+                    <li>Texture units: 288</li>
+                    <li>ROP units: 96</li>
+                    <li>Memory capacity: 11GB GDDR6</li>
+                    <li>Memory path: 352 bits</li>
+                    <li>Memory bandwidth: 616GBps</li>
+                    <li>Ports: VirtualLink/USB-C, DisplayPort 1.4, HDMI 2.0b</li>
+                    <li>Power: 2 x 8-pin, 250W TDP stock, 265W TDP OC Founders Edition</li>
+                </ul>
+                </p>
+            </div>
+        </div>
+        <div class="column RTX20">
+            <div class="content">
+                <img src="Media/Images/Bilder/NVidia/RTX20/rtx2060s.png" alt="rtx2060s" style="width:100%">
+                <h4>RTX 2060 Super</h4>
+                <p>
+                <ul>
+                    <li>CUDA cores: 4,352</li>
+                    <li>Clock speed: 1,350MHz base, 1,545MHz boost (OC Founders Edition 1,635MHz boost)</li>
+                    <li>RT cores: 72</li>
+                    <li>Tensor cores: 576</li>
+                    <li>Texture units: 288</li>
+                    <li>ROP units: 96</li>
+                    <li>Memory capacity: 11GB GDDR6</li>
+                    <li>Memory path: 352 bits</li>
+                    <li>Memory bandwidth: 616GBps</li>
+                    <li>Ports: VirtualLink/USB-C, DisplayPort 1.4, HDMI 2.0b</li>
+                    <li>Power: 2 x 8-pin, 250W TDP stock, 265W TDP OC Founders Edition</li>
+                </ul>
+                </p>
+            </div>
+        </div>
+
+        <div class="column GTX10">
+            <div class="content">
+                <img src="Media/Images/Bilder/NVidia/GTX 10s/gtx1080ti.png" alt="1080ti" style="width:100%">
+                <h4>GTX 1080 ti</h4>
+                <p>
+                <ul>
+                    <li>Base clock: 1480 MHz</li>
+                    <li>GPU boost: 3.0</li>
+                    <li>Boost clock: 1582 MHz</li>
+                    <li>Memory size: 11 GB</li>
+                    <li>Memory type: GDDR5X</li>
+                    <li>Memory clock: 1376.25 MHz</li>
+                    <li>Memory clock (effective): 11010 MHz</li>
+                    <li>Memory interface width: 352-bit</li>
+                    <li>Memory bandwidth: 484.44 GB/s</li>
+                    <li>CUDA: 6.1</li>
+                    <li>CUDA cores: 3584</li>
+                    <li>ROPs: 88</li>
+                    <li>Texture units: 224</li>
+                    <li>Maximum SLI options: 4-way</li>
+                    <li>Maximum GPU temp: 91 C</li>
+                    <li>Maximum power draw: 250 W</li>
+                </ul>
+                </p>
+            </div>
+        </div>
+        <div class="column GTX10">
+            <div class="content">
+                <img src="Media/Images/Bilder/NVidia/GTX 10s/gtx1080.png" alt="gtx1080" style="width:100%">
+                <h4>GTX 1080</h4>
+                <p>
+                <ul>
+                    <li>Base clock: 1480 MHz</li>
+                    <li>GPU boost: 3.0</li>
+                    <li>Boost clock: 1582 MHz</li>
+                    <li>Memory size: 11 GB</li>
+                    <li>Memory type: GDDR5X</li>
+                    <li>Memory clock: 1376.25 MHz</li>
+                    <li>Memory clock (effective): 11010 MHz</li>
+                    <li>Memory interface width: 352-bit</li>
+                    <li>Memory bandwidth: 484.44 GB/s</li>
+                    <li>CUDA: 6.1</li>
+                    <li>CUDA cores: 3584</li>
+                    <li>ROPs: 88</li>
+                    <li>Texture units: 224</li>
+                    <li>Maximum SLI options: 4-way</li>
+                    <li>Maximum GPU temp: 91 C</li>
+                    <li>Maximum power draw: 250 W</li>
+                </ul>
+                </p>
+            </div>
+        </div>
+        <div class="column GTX10">
+            <div class="content">
+                <img src="Media/Images/Bilder/NVidia/GTX 10s/gtx1070ti.png" alt="gtx1070ti" style="width:100%">
+                <h4>GTX 1070ti</h4>
+                <p>
+                <ul>
+                    <li>Base clock: 1607 MHz</li>
+                    <li>GPU boost: 3.0</li>
+                    <li>Boost clock: 1683 MHz</li>
+                    <li>Memory size: 11 GB</li>
+                    <li>Memory type: GDDR5X</li>
+                    <li>Memory clock: 1376.25 MHz</li>
+                    <li>Memory clock (effective): 11010 MHz</li>
+                    <li>Memory interface width: 352-bit</li>
+                    <li>Memory bandwidth: 484.44 GB/s</li>
+                    <li>CUDA: 6.1</li>
+                    <li>CUDA cores: 3584</li>
+                    <li>ROPs: 88</li>
+                    <li>Texture units: 224</li>
+                    <li>Maximum SLI options: 4-way</li>
+                    <li>Maximum GPU temp: 91 C</li>
+                    <li>Maximum power draw: 250 W</li>
+                </ul>
+                </p>
+            </div>
+        </div>
+        <div class="column GTX10">
+            <div class="content">
+                <img src="Media/Images/Bilder/NVidia/GTX 10s/gtx1060.png" alt="gtx1060" style="width:100%">
+                <h4>GTX 1060</h4>
+                <p>
+                <ul>
+                    <li>Base clock: 1480 MHz</li>
+                    <li>GPU boost: 3.0</li>
+                    <li>Boost clock: 1582 MHz</li>
+                    <li>Memory size: 11 GB</li>
+                    <li>Memory type: GDDR5X</li>
+                    <li>Memory clock: 1376.25 MHz</li>
+                    <li>Memory clock (effective): 11010 MHz</li>
+                    <li>Memory interface width: 352-bit</li>
+                    <li>Memory bandwidth: 484.44 GB/s</li>
+                    <li>CUDA: 6.1</li>
+                    <li>CUDA cores: 3584</li>
+                    <li>ROPs: 88</li>
+                    <li>Texture units: 224</li>
+                    <li>Maximum SLI options: 4-way</li>
+                    <li>Maximum GPU temp: 91 C</li>
+                    <li>Maximum power draw: 250 W</li>
+                </ul>
+                </p>
+            </div>
+        </div>
+        <div class="column Quadro">
+            <div class="content">
+                <img src="Media/Images/Bilder/NVidia/Quadro/rtx8000.png" alt="quadro8000" style="width:100%">
+                <h4>RTX Quadro 8000</h4>
+                <p>
+
+                <ul>
+
+                <li>CUDA Parallel-Processing Cores: 4,608</li>
+                <li>NVIDIA Tensor Cores: 576</li>
+                <li>NVIDIA RT Cores: 72</li>
+                <li>GPU Memory: 48 GB GDDR6 with ECC</li>
+                <li>RTX-OPS: 84T</li>
+                <li>Rays Cast: 11 Giga Rays/Sec</li>
+                <li>FP32 Performance: 16.3 TFLOPS</li>
+                <li>Max Power Consumption: Total Board Power: 295W</li>
+                <li>Total Graphics Power: 260W</li>
+                <li>Graphics Bus: PCI Express 3.0 x 16</li>
+                <li>Form Factor: 4.4” (H) x 10.5” (L) Dual Slot</li>
+                <li>VR Ready: Yes</li>
+
+                </ul>
+
+                </p>
+            </div>
+        </div>
+        <div class="column Quadro">
+            <div class="content">
+                <img src="Media/Images/Bilder/NVidia/Quadro/rtx6000.png" alt="quadro6000" style="width:100%">
+                <h4>RTX Quadro 6000</h4>
+                <p>
+                    <ul>
+                <li> CUDA Parallel-Processing Cores: 4,608</li>
+                <li> NVIDIA Tensor Cores: 576</li>
+                <li> NVIDIA RT Cores: 72</li>
+                <li> GPU Memory: 24 GB GDDR6</li>
+                <li> RTX-OPS: 84T</li>
+                <li> Rays Cast: 10 Giga Rays/Sec</li>
+                <li> FP32 Performance: 16.3 TFLOPS</li>
+                <li> Max Power Consumption: 295 W</li>
+                <li> Graphics Bus: PCI Express 3.0 x 16</li>
+                <li> Form Factor: 4.4" (H) x 10.5" (L) Dual Slot</li>
+                <li> VR Ready: Yes</li>
+            </ul>
+                </p>
+            </div>
+        </div>
+        <div class="column Quadro">
+            <div class="content">
+                <img src="Media/Images/Bilder/NVidia/Quadro/rtx5000.png" alt="quadro5000" style="width:100%">
+                <h4>RTX Quadro 5000</h4>
+                <p>
+                    <ul>
+                <li>CUDA Parallel-Processing Cores: 3,072</li>
+                <li>NVIDIA Tensor Cores: 384</li>
+                <li>NVIDIA RT Cores: 48</li>
+                <li>GPU Memory: 16 GB GDDR6</li>
+                <li>RTX-OPS: 62T</li>
+                <li>Rays Cast: 8 Giga Rays/Sec</li>
+                <li>FP32 Performance: 11.2 TFLOPS</li>
+                <li>Max Power Consumption: 265 W</li>
+                <li>Graphics Bus: PCI Express 3.0 x 16</li>
+                <li>Form Factor: 4.4" (H) x 10.5" (L) Dual Slot</li>
+                <li>VR Ready: Yes</li>
+            </ul>
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <br><br><br>
 
 </main>
 
