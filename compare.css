@@ -1,3 +1,69 @@
-#gpu1 {
-    background: black;
+a {
+    text-decoration: none;
+    color: var(--text-secondary);
 }
+
+.firstcol {
+    background-color: var(--bg-primary);
+}
+th{
+    background-color: var(--bg-primary);
+}
+
+@media only screen and (min-width: 600px) {
+
+    table {
+        margin-left: 100px;
+        width: calc(100% - 200px);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    table {
+        width: calc(100%);
+    }
+}
+
+
+
+button {
+    all: unset;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+}
+
+#searchbtn {
+    color: var(--text-secondary);
+    fill: currentColor;
+    width: 24px;
+    height: 24px;
+    padding: 10px;
+}
+
+::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+
+input {
+    all: unset;
+    font: 16px system-ui;
+    color: var(--text-secondary);
+    height: 100%;
+    width: 100%;
+    padding: 6px 10px;
+}
+
+form {
+    background-color: var(--bg-secondary);
+    width: 60%;
+    height: 44px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 15%;
+}
+

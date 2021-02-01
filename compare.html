@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-        <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="Grafikkarten"
           content="Grafikkarten, Grafik, karten, gpu, GPU, Hardware, nvidia, amd, Geforce, RTX, RX"/>
     <title>Grafikkarten</title>
     <script src="main.js"></script>
-    <script src="Compare.js"></script>
     <link rel="stylesheet" href="main.css">
 
     <script src="https://kit.fontawesome.com/c859b4c663.js" crossorigin="anonymous"></script>
@@ -172,7 +173,8 @@
                     <g class="fa-group">
 
                         <path fill="#ff7eee" id="darkIcon" display="inline"
-                              d="M 256 160 c -52.9 0 -96 43.1 -96 96 s 43.1 96 96 96 s 96 -43.1 96 -96 s -43.1 -96 -96 -96 Z m 246.4 80.5 l -94.7 -47.3 l 33.5 -100.4 c 4.5 -13.6 -8.4 -26.5 -21.9 -21.9 l -100.4 33.5 l -47.4 -94.8 c -6.4 -12.8 -24.6 -12.8 -31 0 l -47.3 94.7 L 92.7 70.8 c -13.6 -4.5 -26.5 8.4 -21.9 21.9 l 33.5 100.4 l -94.7 47.4 c -12.8 6.4 -12.8 24.6 0 31 l 94.7 47.3 l -33.5 100.5 c -4.5 13.6 8.4 26.5 21.9 21.9 l 100.4 -33.5 l 47.3 94.7 c 6.4 12.8 24.6 12.8 31 0 l 47.3 -94.7 l 100.4 33.5 c 13.6 4.5 26.5 -8.4 21.9 -21.9 l -33.5 -100.4 l 94.7 -47.3 c 13 -6.5 13 -24.7 0.2 -31.1 Z m -155.9 106 c -49.9 49.9 -131.1 49.9 -181 0 c -49.9 -49.9 -49.9 -131.1 0 -181 c 49.9 -49.9 131.1 -49.9 181 0 c 49.9 49.9 49.9 131.1 0 181 Z");
+                              d="M 256 160 c -52.9 0 -96 43.1 -96 96 s 43.1 96 96 96 s 96 -43.1 96 -96 s -43.1 -96 -96 -96 Z m 246.4 80.5 l -94.7 -47.3 l 33.5 -100.4 c 4.5 -13.6 -8.4 -26.5 -21.9 -21.9 l -100.4 33.5 l -47.4 -94.8 c -6.4 -12.8 -24.6 -12.8 -31 0 l -47.3 94.7 L 92.7 70.8 c -13.6 -4.5 -26.5 8.4 -21.9 21.9 l 33.5 100.4 l -94.7 47.4 c -12.8 6.4 -12.8 24.6 0 31 l 94.7 47.3 l -33.5 100.5 c -4.5 13.6 8.4 26.5 21.9 21.9 l 100.4 -33.5 l 47.3 94.7 c 6.4 12.8 24.6 12.8 31 0 l 47.3 -94.7 l 100.4 33.5 c 13.6 4.5 26.5 -8.4 21.9 -21.9 l -33.5 -100.4 l 94.7 -47.3 c 13 -6.5 13 -24.7 0.2 -31.1 Z m -155.9 106 c -49.9 49.9 -131.1 49.9 -181 0 c -49.9 -49.9 -49.9 -131.1 0 -181 c 49.9 -49.9 131.1 -49.9 181 0 c 49.9 49.9 49.9 131.1 0 181 Z"
+                              );
 
                         />
                         <path
@@ -193,16 +195,816 @@
     </ul>
 </nav>
 
+<div class="loader-wrapper">
+    <span class="loader"><span class="loader-inner"></span></span>
+</div>
 
-<main id="main">
-    <iframe id="gpu1"
-            title="gpu1"
-            width="55%"
-            height="1000px"
-            src="https://gpu.userbenchmark.com/Nvidia-RTX-2080-Ti/Rating/4027"
-            style="-webkit-overflow-scrolling: auto"
-    >
-    </iframe>
+<main>
+        <button onclick="">
+            <svg viewBox="0 0 1024 1024" id="searchbtn">
+                <path class="path1"
+                      d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z"></path>
+            </svg>
+        </button>
+    </form>
+    <br><br>
+    <table>
+        <thead>
+        <tr style="height: 58px;">
+            <th class="firstcol " style="height: 58px; width: 200px;"></th>
+            <th>Score</th>
+            <th>GPU</th>
+            <th>Base/Boost</th>
+            <th>Memory</th>
+            <th>Power</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                    rel="nofollow noopener"
+                    referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="8808173107434977000" data-hawk-tracked="hawklinks"
+                    data-label="Nvidia GeForce RTX 3090">Nvidia GeForce RTX 3090</a></td>
+            <td>100.0%</td>
+            <td>GA102</td>
+            <td>1400/1695 MHz</td>
+            <td>24GB GDDR6X</td>
+            <td>350W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                    referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="1196857770912077800" data-hawk-tracked="hawklinks"
+                    data-label="AMD Radeon RX 6900 XT">AMD Radeon RX 6900 XT</a></td>
+            <td>96.2%</td>
+            <td>Navi 21</td>
+            <td>1825/2250 MHz</td>
+            <td>16GB GDDR6</td>
+            <td>300W</td>
+            <td></td>
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                    referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="1285255475811739000" data-hawk-tracked="hawklinks"
+                    data-label="AMD Radeon RX 6800 XT">AMD Radeon RX 6800 XT</a></td>
+            <td>93.2%</td>
+            <td>Navi 21</td>
+            <td>1825/2250 MHz</td>
+            <td>16GB GDDR6</td>
+            <td>300W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                    rel="nofollow noopener"
+                    referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="6614542997050054000" data-hawk-tracked="hawklinks"
+                    data-label="Nvidia GeForce RTX 3080">Nvidia GeForce RTX 3080</a></td>
+            <td>93.1%</td>
+            <td>GA102</td>
+            <td>1440/1710 MHz</td>
+            <td>10GB GDDR6X</td>
+            <td>320W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                    referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="1216765287047723500" data-hawk-tracked="hawklinks"
+                    data-label="AMD Radeon RX 6800">AMD Radeon RX 6800</a></td>
+            <td>83.3%</td>
+            <td>Navi 21</td>
+            <td>1700/2105 MHz</td>
+            <td>16GB GDDR6</td>
+            <td>250W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                   referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="6493125595352450000" data-hawk-tracked="hawklinks"
+                    data-label="Nvidia Titan RTX">Nvidia Titan RTX</a></td>
+            <td>79.5%</td>
+            <td>TU102</td>
+            <td>1350/1770 MHz</td>
+            <td>24GB GDDR6</td>
+            <td>280W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                   rel="nofollow noopener"
+                    referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="1316887570050270500" data-hawk-tracked="hawklinks"
+                    data-label="Nvidia GeForce RTX 2080 Ti">Nvidia GeForce RTX 2080 Ti</a></td>
+            <td>77.4%</td>
+            <td>TU102</td>
+            <td>1350/1635 MHz</td>
+            <td>11GB GDDR6</td>
+            <td>260W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                   rel="nofollow noopener"
+                    referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="9333376333962424000" data-hawk-tracked="hawklinks"
+                    data-label="Nvidia GeForce RTX 3070">Nvidia GeForce RTX 3070</a></td>
+            <td>76.3%</td>
+            <td>GA104</td>
+            <td>1500/1730 MHz</td>
+            <td>8GB GDDR6</td>
+            <td>220W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                   rel="nofollow noopener"
+                    referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="2207667623420065000" data-hawk-tracked="hawklinks"
+                    data-label="Nvidia GeForce RTX 3060 Ti">Nvidia GeForce RTX 3060 Ti</a></td>
+            <td>69.6%</td>
+            <td>GA104</td>
+            <td>1410/1665 MHz</td>
+            <td>8GB GDDR6</td>
+            <td>200W</td>
+            <td></td>
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                    referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="3765984266980355600" data-hawk-tracked="hawklinks"
+                    data-label="Nvidia Titan V">Nvidia
+                Titan V</a></td>
+            <td>68.7%</td>
+            <td>GV100</td>
+            <td>1200/1455 MHz</td>
+            <td>12GB HBM2</td>
+            <td>250W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                    rel="nofollow noopener" referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US" data-merchant-id="1471" data-hl-processed="hawklinks"
+                    class="hawk-link-parsed" data-custom-tracking-id="1001413802573274600" data-hawk-tracked="hawklinks"
+                    data-label="Nvidia GeForce RTX 2080 Super">Nvidia GeForce RTX 2080 Super</a></td>
+            <td>66.8%</td>
+            <td>TU104</td>
+            <td>1650/1815 MHz</td>
+            <td>8GB GDDR6</td>
+            <td>250W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                    rel="nofollow noopener"
+                    referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="6122647113112300000" data-hawk-tracked="hawklinks"
+                    data-label="Nvidia GeForce RTX 2080">Nvidia GeForce RTX 2080</a></td>
+            <td>62.5%</td>
+            <td>TU104</td>
+            <td>1515/1800 MHz</td>
+            <td>8GB GDDR6</td>
+            <td>225W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                   referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="6908652181933174000" data-hawk-tracked="hawklinks"
+                    data-label="Nvidia Titan Xp">Nvidia Titan Xp</a></td>
+            <td>61.1%</td>
+            <td>GP102</td>
+            <td>1405/1480 MHz</td>
+            <td>12GB GDDR5X</td>
+            <td>250W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                    rel="nofollow noopener" referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US" data-merchant-id="1471" data-hl-processed="hawklinks"
+                    class="hawk-link-parsed" data-custom-tracking-id="1746105629257521400" data-hawk-tracked="hawklinks"
+                    data-label="Nvidia GeForce RTX 2070 Super">Nvidia GeForce RTX 2070 Super</a></td>
+            <td>59.6%</td>
+            <td>TU104</td>
+            <td>1605/1770 MHz</td>
+            <td>8GB GDDR6</td>
+            <td>215W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                    referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="1369838083505305300" data-hawk-tracked="hawklinks"
+                    data-label="AMD Radeon VII">AMD
+                Radeon VII</a></td>
+            <td>58.9%</td>
+            <td>Vega 20</td>
+            <td>1400/1750 MHz</td>
+            <td>16GB HBM2</td>
+            <td>300W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                    rel="nofollow noopener"
+                    referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="6956067832446090000" data-hawk-tracked="hawklinks"
+                    data-label="Nvidia GeForce GTX 1080 Ti">Nvidia GeForce GTX 1080 Ti</a></td>
+            <td>57.8%</td>
+            <td>GP102</td>
+            <td>1480/1582 MHz</td>
+            <td>11GB GDDR5X</td>
+            <td>250W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                    referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="8235886452270431000" data-hawk-tracked="hawklinks"
+                    data-label="AMD Radeon RX 5700 XT">AMD Radeon RX 5700 XT</a></td>
+            <td>56.7%</td>
+            <td>Navi 10</td>
+            <td>1605/1905 MHz</td>
+            <td>8GB GDDR6</td>
+            <td>225W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                    rel="nofollow noopener"
+                    referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="7077133247409244000" data-hawk-tracked="hawklinks"
+                    data-label="Nvidia GeForce RTX 2070">Nvidia GeForce RTX 2070</a></td>
+            <td>53.1%</td>
+            <td>TU106</td>
+            <td>1410/1710 MHz</td>
+            <td>8GB GDDR6</td>
+            <td>185W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                    referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="1239330414783187200" data-hawk-tracked="hawklinks"
+                    data-label="AMD Radeon RX 5700">AMD Radeon RX 5700</a></td>
+            <td>51.4%</td>
+            <td>Navi 10</td>
+            <td>1465/1725 MHz</td>
+            <td>8GB GDDR6</td>
+            <td>185W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                    class="hawk-link-parsed" data-custom-tracking-id="9532415565725762000" data-hawk-tracked="hawklinks"
+                    data-label="Nvidia GeForce RTX 2060 Super">Nvidia GeForce RTX 2060 Super</a></td>
+            <td>50.6%</td>
+            <td>TU106</td>
+            <td>1470/1650 MHz</td>
+            <td>8GB GDDR6</td>
+            <td>175W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                   referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="1080456895526212700" data-hawk-tracked="hawklinks"
+                    data-label="AMD Radeon RX Vega 64">AMD Radeon RX Vega 64</a></td>
+            <td>48.4%</td>
+            <td>Vega 10</td>
+            <td>1274/1546 MHz</td>
+            <td>8GB HBM2</td>
+            <td>295W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                   referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="6984703870115707000" data-hawk-tracked="hawklinks"
+                    data-label="AMD Radeon RX 5600 XT">AMD Radeon RX 5600 XT</a></td>
+            <td>46.6%</td>
+            <td>Navi 10</td>
+            <td>?/1615 MHz</td>
+            <td>6GB GDDR6</td>
+            <td>150W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                     rel="nofollow noopener"
+                    referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="7377312790090065000" data-hawk-tracked="hawklinks"
+                    data-label="Nvidia GeForce GTX 1080">Nvidia GeForce GTX 1080</a></td>
+            <td>45.2%</td>
+            <td>GP104</td>
+            <td>1607/1733 MHz</td>
+            <td>8GB GDDR5X</td>
+            <td>180W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                    rel="nofollow noopener"
+                    referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="7231146481238743000" data-hawk-tracked="hawklinks"
+                    data-label="Nvidia GeForce RTX 2060">Nvidia GeForce RTX 2060</a></td>
+            <td>44.9%</td>
+            <td>TU106</td>
+            <td>1365/1680 MHz</td>
+            <td>6GB GDDR6</td>
+            <td>160W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                   referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="8115098574083047000" data-hawk-tracked="hawklinks"
+                    data-label="AMD Radeon RX Vega 56">AMD Radeon RX Vega 56</a></td>
+            <td>42.7%</td>
+            <td>Vega 10</td>
+            <td>1156/1471 MHz</td>
+            <td>8GB HBM2</td>
+            <td>210W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                   rel="nofollow noopener"
+                    referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="1142645965710551400" data-hawk-tracked="hawklinks"
+                    data-label="Nvidia GeForce GTX 1070 Ti">Nvidia GeForce GTX 1070 Ti</a></td>
+            <td>41.8%</td>
+            <td>GP104</td>
+            <td>1607/1683 MHz</td>
+            <td>8GB GDDR5</td>
+            <td>180W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                     rel="nofollow noopener" referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US" data-merchant-id="1471" data-hl-processed="hawklinks"
+                    class="hawk-link-parsed" data-custom-tracking-id="9237653444652761000" data-hawk-tracked="hawklinks"
+                    data-label="Nvidia GeForce GTX 1660 Super">Nvidia GeForce GTX 1660 Super</a></td>
+            <td>37.9%</td>
+            <td>TU116</td>
+            <td>1530/1785 MHz</td>
+            <td>6GB GDDR6</td>
+            <td>125W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                    rel="nofollow noopener"
+                    referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="6252968602939435000" data-hawk-tracked="hawklinks"
+                    data-label="Nvidia GeForce GTX 1660 Ti">Nvidia GeForce GTX 1660 Ti</a></td>
+            <td>37.8%</td>
+            <td>TU116</td>
+            <td>1365/1680 MHz</td>
+            <td>6GB GDDR6</td>
+            <td>120W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                    rel="nofollow noopener"
+                    referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="5786184795507581000" data-hawk-tracked="hawklinks"
+                    data-label="Nvidia GeForce GTX 1070">Nvidia GeForce GTX 1070</a></td>
+            <td>36.7%</td>
+            <td>GP104</td>
+            <td>1506/1683 MHz</td>
+            <td>8GB GDDR5</td>
+            <td>150W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                    rel="nofollow noopener" referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US" data-merchant-id="1471" data-hl-processed="hawklinks"
+                    class="hawk-link-parsed" data-custom-tracking-id="6074582727559010000" data-hawk-tracked="hawklinks"
+                    data-label="Nvidia GTX Titan X (Maxwell)">Nvidia GTX Titan X (Maxwell)</a></td>
+            <td>35.3%</td>
+            <td>GM200</td>
+            <td>1000/1075 MHz</td>
+            <td>12GB GDDR5</td>
+            <td>250</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                    rel="nofollow noopener"
+                    referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="3101093873228329000" data-hawk-tracked="hawklinks"
+                    data-label="Nvidia GeForce GTX 980 Ti">Nvidia GeForce GTX 980 Ti</a></td>
+            <td>32.9%</td>
+            <td>GM200</td>
+            <td>1000/1075 MHz</td>
+            <td>6GB GDDR5</td>
+            <td>250W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                    rel="nofollow noopener"
+                    referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="6207957275896327000" data-hawk-tracked="hawklinks"
+                    data-label="Nvidia GeForce GTX 1660">Nvidia GeForce GTX 1660</a></td>
+            <td>32.8%</td>
+            <td>TU116</td>
+            <td>1530/1785 MHz</td>
+            <td>6GB GDDR5</td>
+            <td>120W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                   referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="1500230702695819000" data-hawk-tracked="hawklinks"
+                    data-label="AMD Radeon R9 Fury X">AMD Radeon R9 Fury X</a></td>
+            <td>32.7%</td>
+            <td>Fiji</td>
+            <td>1050 MHz</td>
+            <td>4GB HBM</td>
+            <td>275W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                   referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="1261487488847369000" data-hawk-tracked="hawklinks"
+                    data-label="AMD Radeon RX 590">AMD Radeon RX 590</a></td>
+            <td>32.4%</td>
+            <td>Polaris 30</td>
+            <td>1469/1545 MHz</td>
+            <td>8GB GDDR5</td>
+            <td>225W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                   rel="nofollow noopener"
+                    referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="8297939196171742000" data-hawk-tracked="hawklinks"
+                    data-label="AMD Radeon RX 5500 XT 8GB">AMD Radeon RX 5500 XT 8GB</a></td>
+            <td>31.8%</td>
+            <td>Navi 14</td>
+            <td>?/1717 MHz</td>
+            <td>8GB GDDR6</td>
+            <td>130W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                     referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="9222415155475351000" data-hawk-tracked="hawklinks"
+                    data-label="AMD Radeon RX 580 8GB">AMD Radeon RX 580 8GB</a></td>
+            <td>30.9%</td>
+            <td>Polaris 20</td>
+            <td>1257/1340 MHz</td>
+            <td>8GB GDDR5</td>
+            <td>185W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                   rel="nofollow noopener" referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US" data-merchant-id="1471" data-hl-processed="hawklinks"
+                    class="hawk-link-parsed" data-custom-tracking-id="1340475816716945000" data-hawk-tracked="hawklinks"
+                    data-label="Nvidia GeForce GTX 1650 Super">Nvidia GeForce GTX 1650 Super</a></td>
+            <td>28.5%</td>
+            <td>TU116</td>
+            <td>1530/1725 MHz</td>
+            <td>4GB GDDR6</td>
+            <td>100W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                     rel="nofollow noopener"
+                    referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="1259979667568935400" data-hawk-tracked="hawklinks"
+                    data-label="AMD Radeon RX 5500 XT 4GB">AMD Radeon RX 5500 XT 4GB</a></td>
+            <td>28.4%</td>
+            <td>Navi 14</td>
+            <td>?/1717 MHz</td>
+            <td>4GB GDDR6</td>
+            <td>130W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                    referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="1413881068207690800" data-hawk-tracked="hawklinks"
+                    data-label="AMD Radeon R9 390">AMD Radeon R9 390</a></td>
+            <td>27.2%</td>
+            <td>Hawaii</td>
+            <td>1000 MHz</td>
+            <td>8GB GDDR5</td>
+            <td>275W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                   rel="nofollow noopener" referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US" data-merchant-id="1471" data-hl-processed="hawklinks"
+                    class="hawk-link-parsed" data-custom-tracking-id="3659622762050797000" data-hawk-tracked="hawklinks"
+                    data-label="Nvidia GeForce GTX 1060 6GB">Nvidia GeForce GTX 1060 6GB</a></td>
+            <td>26.5%</td>
+            <td>GP106</td>
+            <td>1506/1708 MHz</td>
+            <td>6GB GDDR5</td>
+            <td>120W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                    referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="8980888690974270000" data-hawk-tracked="hawklinks"
+                    data-label="Nvidia GeForce GTX 980">Nvidia GeForce GTX 980</a></td>
+            <td>26.4%</td>
+            <td>GM204</td>
+            <td>1126/1216 MHz</td>
+            <td>4GB GDDR5</td>
+            <td>165W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                    referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="9767710406388052000" data-hawk-tracked="hawklinks"
+                    data-label="AMD Radeon RX 570 4GB">AMD Radeon RX 570 4GB</a></td>
+            <td>25.2%</td>
+            <td>Polaris 20</td>
+            <td>1168/1244 MHz</td>
+            <td>4GB GDDR5</td>
+            <td>150W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                    referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="1012436994610655200" data-hawk-tracked="hawklinks"
+                    data-label="Nvidia GTX 1650 GDDR6">Nvidia GTX 1650 GDDR6</a></td>
+            <td>23.8%</td>
+            <td>TU117</td>
+            <td>1410/1590 MHz</td>
+            <td>4GB GDDR6</td>
+            <td>75W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                    rel="nofollow noopener" referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US" data-merchant-id="1471" data-hl-processed="hawklinks"
+                    class="hawk-link-parsed" data-custom-tracking-id="5684296040984185000" data-hawk-tracked="hawklinks"
+                    data-label="Nvidia GeForce GTX 1060 3GB">Nvidia GeForce GTX 1060 3GB</a></td>
+            <td>22.3%</td>
+            <td>GP106</td>
+            <td>1506/1708 MHz</td>
+            <td>3GB GDDR5</td>
+            <td>120W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                    referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="1118330698286970200" data-hawk-tracked="hawklinks"
+                    data-label="Nvidia GeForce GTX 970">Nvidia GeForce GTX 970</a></td>
+            <td>22.1%</td>
+            <td>GM204</td>
+            <td>1050/1178 MHz</td>
+            <td>4GB GDDR5</td>
+            <td>145W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                    rel="nofollow noopener"
+                    referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="7427581941340598000" data-hawk-tracked="hawklinks"
+                    data-label="Nvidia GeForce GTX 1650">Nvidia GeForce GTX 1650</a></td>
+            <td>20.9%</td>
+            <td>TU117</td>
+            <td>1485/1665 MHz</td>
+            <td>4GB GDDR5</td>
+            <td>75W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                   rel="nofollow noopener"
+                    referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="1378883706147881700" data-hawk-tracked="hawklinks"
+                    data-label="Nvidia GeForce GTX 1050 Ti">Nvidia GeForce GTX 1050 Ti</a></td>
+            <td>16.1%</td>
+            <td>GP107</td>
+            <td>1290/1392 MHz</td>
+            <td>4GB GDDR5</td>
+            <td>75W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                     referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="6640797043645195000" data-hawk-tracked="hawklinks"
+                    data-label="AMD Radeon RX 560 4GB">AMD Radeon RX 560 4GB</a></td>
+            <td>12.5%</td>
+            <td>Polaris 21</td>
+            <td>1175/1275 MHz</td>
+            <td>4GB GDDR5</td>
+            <td>80W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                    rel="nofollow noopener"
+                    referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="8897776816904604000" data-hawk-tracked="hawklinks"
+                    data-label="Nvidia GeForce GTX 1050">Nvidia GeForce GTX 1050</a></td>
+            <td>12.2%</td>
+            <td>GP107</td>
+            <td>1354/1455 MHz</td>
+            <td>2GB GDDR5</td>
+            <td>75W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                    referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="9729548714689708000" data-hawk-tracked="hawklinks"
+                    data-label="AMD Radeon RX 550">AMD Radeon RX 550</a></td>
+            <td>8.0%</td>
+            <td>Polaris 22</td>
+            <td>1100/1183 MHz</td>
+            <td>4GB GDDR5</td>
+            <td>50W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                   referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="1415305725562962200" data-hawk-tracked="hawklinks"
+                    data-label="Nvidia GeForce GT 1030">Nvidia GeForce GT 1030</a></td>
+            <td>5.8%</td>
+            <td>GP108</td>
+            <td>1228/1468 MHz</td>
+            <td>2GB GDDR5</td>
+            <td>30W</td>
+
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                    referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="2809002054870081000" data-hawk-tracked="hawklinks"
+                    data-label="AMD Vega 11 (R5 3400G)">AMD Vega 11 (R5 3400G)</a></td>
+            <td>5.5%</td>
+            <td>Vega 11</td>
+            <td>1400 MHz</td>
+            <td>2x8GB DDR4-3200</td>
+            <td>N/A</td>
+            <td></td>
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                     referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="9503138441238036000" data-hawk-tracked="hawklinks"
+                    data-label="AMD Vega 8 (R3 3200G)">AMD Vega 8 (R3 3200G)</a></td>
+            <td>4.9%</td>
+            <td>Vega 8</td>
+            <td>1250 MHz</td>
+            <td>2x8GB DDR4-3200</td>
+            <td>N/A</td>
+            <td></td>
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                    referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="8028498795710938000" data-hawk-tracked="hawklinks"
+                    data-label="Intel Iris Plus (i7-1065G7)">Intel Iris Plus (i7-1065G7)</a></td>
+            <td>3.3%</td>
+            <td>Gen11 ICL-U</td>
+            <td>1100 MHz</td>
+            <td>2x8GB LPDDR4X-3733</td>
+            <td>N/A</td>
+            <td></td>
+        </tr>
+        <tr style="height: 58px;">
+            <td class="firstcol " style="height: 58px; width: 200px;"><a
+                   referrerpolicy="no-referrer-when-downgrade" data-component-tracked="1"
+                    data-merchant-name="Amazon US"
+                    data-merchant-id="1471" data-hl-processed="hawklinks" class="hawk-link-parsed"
+                    data-custom-tracking-id="9476990802991432000" data-hawk-tracked="hawklinks"
+                    data-label="Intel UHD Graphics 630 (i7-10700K)">Intel UHD Graphics 630 (i7-10700K)</a></td>
+            <td>2.0%</td>
+            <td>Gen9.5 CFL</td>
+            <td>1200 MHz</td>
+            <td>2x8GB DDR4-3200</td>
+            <td>N/A</td>
+            <td></td>
+        </tr>
+        </tbody>
+    </table>
+    </div>
 </main>
 </body>
 </html>

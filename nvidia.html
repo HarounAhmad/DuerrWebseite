@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
 
@@ -175,13 +175,16 @@
                               );
 
                         />
+                        </g>
+                    <g>
+                        <div>
                         <path
                                 id="lightIcon" display="none" fill="#ff7eee"
                                 d="M 279.135 512 c 78.756 0 150.982 -35.804 198.844 -94.775 c 28.27 -34.831 -2.558 -85.722 -46.249 -77.401 c -82.348 15.683 -158.272 -47.268 -158.272 -130.792 c 0 -48.424 26.06 -92.292 67.434 -115.836 c 38.745 -22.05 28.999 -80.788 -15.022 -88.919 A 257.936 257.936 0 0 0 279.135 0 c -141.36 0 -256 114.575 -256 256 c 0 141.36 114.576 256 256 256 Z m 0 -464 c 12.985 0 25.689 1.201 38.016 3.478 c -54.76 31.163 -91.693 90.042 -91.693 157.554 c 0 113.848 103.641 199.2 215.252 177.944 C 402.574 433.964 344.366 464 279.135 464 c -114.875 0 -208 -93.125 -208 -208 s 93.125 -208 208 -208 Z"
                         >
 
                         </path>
-
+                        </div>
                     </g>
                 </svg>
                 <span class="link-text">Theme</span>
@@ -194,6 +197,9 @@
 </nav>
 
 <main>
+    <div class="loader-wrapper">
+        <span class="loader"><span class="loader-inner"></span></span>
+    </div>
 
     <div class="HeadingVideo" id="HeadingVideoDark">
         <video autoplay muted loop id="rtxDark">
