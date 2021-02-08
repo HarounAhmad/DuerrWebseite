@@ -2,22 +2,13 @@
 
 
 @media only screen and (min-width: 600px) {
-    .newest
-    {
-        border: var(--text-secondary);
-        border-top:    1px solid;
-        border-right:  0px;
-        border-bottom: 0px;
-        border-left:   0px;
-
-        width: fit-content;
-
-        max-width: 1000px;
-    }
 
     div.gallery {
-        float: left;
-        width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+        width: auto;
+        max-width: 700px;
+
     }
 
 
@@ -30,23 +21,13 @@
 }
 
 @media only screen and (max-width: 600px) {
-    .newest
-    {
-        border: var(--text-secondary);
-        border-top:    1px solid;
-        border-right:  0px;
-        border-bottom: 0px;
-        border-left:   0px;
 
-        width: fit-content;
-
-        max-width: 500px;
-    }
 
     div.gallery {
-        float: left;
-        width: 500px;
-
+        margin-left: auto;
+        margin-right: auto;
+        width: auto;
+        max-width: 700px;
     }
 
 
@@ -63,5 +44,6 @@
 
 .desc{
     padding-bottom: 50px;
+    text-align: center;
 }
 

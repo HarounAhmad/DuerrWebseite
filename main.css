@@ -18,6 +18,7 @@ body {
     background-color: var(--bg-secondary);
     margin: 0;
     padding: 0;
+    transition: var(--transition-speed);
 }
 
 body::-webkit-scrollbar {
@@ -141,6 +142,7 @@ main {
         display: none;
     }
 
+
     .navbar-nav {
         flex-direction: row;
     }
@@ -159,6 +161,9 @@ main {
         top: 0;
         width: 5rem;
         height: 100vh;
+    }
+    .logoMobile {
+        display: none;
     }
 
     .navbar:hover {
@@ -208,9 +213,7 @@ main {
     display: block;
 }
 
-.solar #solarIcon {
-    display: block;
-}
+
 
 .loader-wrapper {
     width: 100%;
@@ -251,4 +254,43 @@ main {
     50% { height: 100%;}
     75% { height: 100%;}
     100% { height: 0%;}
+}
+
+.impressum {
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    max-width: 700px;
+}
+
+
+h1, h2, h3, h4, #hafttext, #cnt1, #cnt2 {
+    text-align: center;
+}
+
+#quelle {
+    text-align: center;
+    margin-left: 50%;
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    filter: grayscale(100%) opacity(0.7);
+    transition: var(--transition-speed);
+}
+
+#contact {
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    max-width: 700px;
+}
+
+#contact td {
+    padding: 40px;
+    padding-top: .30px;
+    padding-bottom: .30px;
+
+
 }
