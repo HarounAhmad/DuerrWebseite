@@ -30,7 +30,7 @@
     }
 
     div.HeadingVideo {
-        width: 100%;
+        width: auto;
         height: auto;
         margin-left: -65px;
     }
@@ -39,6 +39,16 @@
         max-width: 100%;
         overflow-x: hidden;
     }
+
+    #rtxDark{
+        width: 120%;
+    }
+    #rtxWhite
+    {
+        width: 110%;
+        margin-left: -25px;
+    }
+
 }
 
 @media only screen and (max-width: 600px) {
